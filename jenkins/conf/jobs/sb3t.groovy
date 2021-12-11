@@ -1,9 +1,9 @@
 #!groovy
-println('------------------------------------------------------------------Import Job CI/Job1')
-def pipelineScript = new File('/var/jenkins_config/jobs/job1-pipeline.groovy').getText("UTF-8")
+println('------------------------------------------------------------------Import Job CI/SB3T')
+def pipelineScript = new File('/var/jenkins_config/jobs/sb3t-pipeline.groovy').getText("UTF-8")
 
-pipelineJob('CI/Job1') {
-    description("Build .jar from job1 java application")
+pipelineJob('CI/sb3t') {
+    description("Build .jar from sb3t java application")
     parameters {
         stringParam {
             name('BRANCH')
@@ -12,22 +12,21 @@ pipelineJob('CI/Job1') {
             trim(false)
         }
         booleanParam {
-            name('SKIP_TESTS')
+            name('SKIP_TEST')
             defaultValue(true)
-            description("paramètre pour passer les tests")
+            description("Skip test")
         }
-          choice {
+        choice {
             name('VERSION_TYPE')
             choices(['SNAPSHOT', 'RELEASE'])
             description('Version type between snapshot and release')
         }
         stringParam {
-            name('VERSION_TYPE')
+            name('VERSION')
             defaultValue('1.0')
-            description("version")
+            description("version of project")
             trim(false)
         }
-      
     }
     definition {
         cps {
