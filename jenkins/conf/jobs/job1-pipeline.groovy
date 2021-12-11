@@ -27,7 +27,7 @@ pipeline {
         stage('git clone') {
             steps {
                  git branch: "${params.BRANCH}",
-                    url: 'https://github.com/leoniemandah/sb3t.git'
+                    url: 'https://github.com/leoniemandah/job1.git'
             }
         }
         stage('compile') {
