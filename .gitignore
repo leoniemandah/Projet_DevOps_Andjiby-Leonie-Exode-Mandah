@@ -1,0 +1,11 @@
+terraform/credential
+terraform/.terraform
+terraform/.terraform.lock.hcl
+terraform/ssh/
+terraform/terraform.tfstate
+terraform/.terraform.tfstate.lock.info
+terraform/terraform.tfstate.backup
+terraform/terraform-files/credential
+terraform/terraform-files/ssh
+terraform/terraform-files/terraform.tfstate
+terraform/terraform-files/.terraform/providers/registry.terraform.io/hashicorp/template/2.2.0/linux_amd64/terraform-provider-template_v2.2.0_x4
